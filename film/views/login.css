@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url('img/film.jpg') center/cover no-repeat;
+}
+
+.login-container {
+  width: 300px; /* Sesuaikan lebar form sesuai kebutuhan */
+  background-color: #ffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.app-header {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.app-header h1 {
+  margin-bottom: 10px;
+}
+
+.app-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #0f0101;
+}
+
+.login-form {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input {
+  width: calc(100% - 20px); /* Mengurangkan padding agar lebar input sesuai dengan form */
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: none; /* Menghilangkan border pada input */
+  border-radius: 4px; /* Menambahkan border-radius pada input */
+}
+
+.login-btn {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 4px; /* Menambahkan border-radius pada tombol */
+}
+
+.login-btn:hover {
+  background-color: #2980b9;
+}
+
+.signup-link {
+  display: block;
+  margin-top: 15px;
+  color: #116fc2;
+  text-decoration: none;
+}

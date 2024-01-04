@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Popular Movies</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Sisipkan file CSS terpisah jika diperlukan -->
+</head>
+<body>
+
+<nav class="navbar">
+  <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="rating.html">Rating</a></li>
+    <li><a href="id.html">Detail Film</a></li>
+    <li><a href="genres.html">Top Film Genres</a></li>
+  </ul>
+  <button class="logout-btn">Log Out</button>
+</nav>
+
+<div class="container">
+  <h1>Popular Movies</h1>
+  <div id="popularMoviesContainer" class="movies-container"></div>
+</div>
+
+<script src="script.js"></script> <!-- Sisipkan file JavaScript terpisah -->
+<script>
+  const logoutBtn = document.querySelector('.logout-btn');
+
+  logoutBtn.addEventListener('click', () => {
+    fetch('/logout', {
+      method: 'POST'
+    })
+    .then(response => {
+      if (response.redirected) {
+        window.location.href = response.url; // Redirect ke halaman login setelah logout
+      }
+    })
+    .catch(error => {
+      console.error('Error logging out:', error);
+      // Handle error jika ada
+    });
+  });
+  
+  // Panggil fungsi untuk mendapatkan film populer saat halaman dimuat
+  document.addEventListener('DOMContentLoaded', () => {
+    getPopularMovies();
+  });
+</script>
+</body>
+</html>
